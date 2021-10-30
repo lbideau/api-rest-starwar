@@ -27,16 +27,7 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     #favorite_id = db.Column(db.Integer, db.ForeignKey('favorite.id'))
     favorites  = db.relationship('Favorite', backref='user', uselist=True)
-    def verifyLogin(self):
-        """verify login"""
-        pass
-    def addToFavorite(self):
-        """Add to Favorite """
-        pass
-    def removeFavorite(self):
-        """remove Favorite"""
-        pass
-
+    
     def serialize(self):
         return {
             "user_name": self.user_name,
